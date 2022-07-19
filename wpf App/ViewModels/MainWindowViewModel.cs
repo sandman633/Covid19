@@ -16,10 +16,18 @@ namespace Covid19.ViewModels
         {
             get => _title;
             set => Set(ref _title, value);
-        } 
+        }
         #endregion
 
-
+        #region Status programm
+        private string _status = "Готов";
+        /// <summary>Window Title</summary>
+        public string Status
+        {
+            get => _status;
+            set => Set(ref _status, value);
+        }
+        #endregion
 
     }
 }
