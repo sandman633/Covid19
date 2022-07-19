@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using wpf_App.ViewModels.Base;
+using Covid19.ViewModels.Base;
 
-namespace wpf_App.ViewModels
+namespace Covid19.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
         #region Window Title
-        private string _title;
+        private string _title = "Анализ статистики";
         /// <summary>Window Title</summary>
         public string Title
         {

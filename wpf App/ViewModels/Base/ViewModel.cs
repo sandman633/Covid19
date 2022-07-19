@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wpf_App.ViewModels.Base
+namespace Covid19.ViewModels.Base
 {
     internal abstract class ViewModel : INotifyPropertyChanged
     {

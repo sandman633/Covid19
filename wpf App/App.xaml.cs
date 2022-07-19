@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace wpf_App
+namespace Covid19
 {
     /// <summary>
     /// Interaction logic for App.xaml

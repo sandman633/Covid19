@@ -1,7 +1,7 @@
-﻿<Application x:Class="wpf_App.App"
+﻿<Application x:Class="Covid19.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:wpf_App"
+             xmlns:local="clr-namespace:Covid19"
              StartupUri="Views/Windows/MainWindow.xaml">
     <Application.Resources>
          

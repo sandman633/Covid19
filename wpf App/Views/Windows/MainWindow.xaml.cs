@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace wpf_App
+namespace Covid19
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
