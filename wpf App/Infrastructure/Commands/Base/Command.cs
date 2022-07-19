@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace wpf_App.Infrastructure.Commands.Base
+namespace Covid19.Infrastructure.Commands.Base
 {
     internal abstract class Command : ICommand
     {

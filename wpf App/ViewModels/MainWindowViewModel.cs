@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Covid19.ViewModels.Base;
-using wpf_App.Infrastructure.Commands;
+using Covid19.Infrastructure.Commands;
 
 namespace Covid19.ViewModels
 {

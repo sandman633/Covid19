@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using wpf_App.Infrastructure.Commands.Base;
+using Covid19.Infrastructure.Commands.Base;
 
-namespace wpf_App.Infrastructure.Commands
+namespace Covid19.Infrastructure.Commands
 {
     internal class LambdaCommand : Command
     {
