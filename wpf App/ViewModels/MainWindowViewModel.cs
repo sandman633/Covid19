@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 using Covid19.ViewModels.Base;
+using wpf_App.Infrastructure.Commands;
 
 namespace Covid19.ViewModels
 {
@@ -29,5 +32,28 @@ namespace Covid19.ViewModels
         }
         #endregion
 
+        #region Commands
+
+        #region CloseAppCommand
+        public ICommand CloseAppCommand { get; set; }
+        private bool CanCloseAppCommandExecute(object p) => true;
+
+        private void OnCloseAppCommandExecuted(object p)
+        {
+            Application.Current.Shutdown();
+        }
+        #endregion
+
+
+        #endregion
+
+        public MainWindowViewModel()
+        {
+            #region Commands
+
+            CloseAppCommand = new LambdaCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
+
+            #endregion
+        }
     }
 }
