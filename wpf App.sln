@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19", "wpf App\Covid19.csproj", "{44111755-9DFF-4AF6-8353-AA8D1F70C5FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Covid19", "wpf App\Covid19.csproj", "{44111755-9DFF-4AF6-8353-AA8D1F70C5FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{83F54E2F-51D0-4DAE-8960-D40BB53FDC00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.Console", "test\test.Console\test.Console.csproj", "{87DAD3AD-3431-44D2-A743-AB643DFD38CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{44111755-9DFF-4AF6-8353-AA8D1F70C5FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44111755-9DFF-4AF6-8353-AA8D1F70C5FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44111755-9DFF-4AF6-8353-AA8D1F70C5FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87DAD3AD-3431-44D2-A743-AB643DFD38CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DAD3AD-3431-44D2-A743-AB643DFD38CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DAD3AD-3431-44D2-A743-AB643DFD38CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DAD3AD-3431-44D2-A743-AB643DFD38CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87DAD3AD-3431-44D2-A743-AB643DFD38CB} = {83F54E2F-51D0-4DAE-8960-D40BB53FDC00}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CBBF1EE-1B2F-40A3-8A20-F8D1BAE708A6}
