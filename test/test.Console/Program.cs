@@ -28,7 +28,24 @@ class Program
         {
             var line = dataReader.ReadLine();
             if (string.IsNullOrWhiteSpace(line)) continue;
-            yield return line;
+            yield return line.Replace("Korea,","Korea - ").Replace("Bonaire,", "Bonaire - ");
+        }
+    }
+
+    private static IEnumerable<(string CountryName,string Province, int[] Counts)> GetInjuredPeopelsDataByCountry()
+    {
+        var lines = GetDataLines()
+            .Skip(1)
+            .Select(e=>e.Split(','));
+
+        foreach(var line in lines)
+        {
+            var province = line[0].Trim();
+            var country = line[1].Trim(' ','"');
+            var counts = line.Skip(4)
+                .Select(int.Parse)
+                .ToArray();
+            yield return (country, province, counts);
         }
     }
 
@@ -44,9 +61,11 @@ class Program
 
         var dates = GetDateTimes();
 
-        foreach(var date in dates)
-            Console.WriteLine(date);
-        
+        var russia = GetInjuredPeopelsDataByCountry().First(e => e.CountryName.Equals("Russia", StringComparison.OrdinalIgnoreCase));
+
+
+        Console.WriteLine(String.Join("\r\n",dates.Zip(russia.Counts,(date,count)=>$"{date} - {count}")));
+
 
 
         //foreach (var line in GetDataLines())
