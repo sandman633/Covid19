@@ -7,11 +7,22 @@ using System.Windows;
 using System.Windows.Input;
 using Covid19.ViewModels.Base;
 using Covid19.Infrastructure.Commands;
+using Covid19.Models;
 
 namespace Covid19.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
+        #region Test DataPoints
+        private IEnumerable<DataPoint> _testDataPoints;
+        /// <summary>Test Data points</summary>
+        public IEnumerable<DataPoint> TestDataPoints
+        {
+            get => _testDataPoints;
+            set => Set(ref _testDataPoints, value);
+        }
+        #endregion
+
         #region Window Title
         private string _title = "Анализ статистики";
         /// <summary>Window Title</summary>
@@ -54,6 +65,16 @@ namespace Covid19.ViewModels
             CloseAppCommand = new LambdaCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
 
             #endregion
+
+            const double rad = Math.PI / 180;
+            List<DataPoint> points = new List<DataPoint>((int)(360/0.1));
+            for(var x = 0d; x <= 360; x += 0.1)
+            {
+                var y = Math.Sin(2 * Math.PI * x * rad);
+                points.Add(new DataPoint { X = x, Y = y });
+            }
+
+            TestDataPoints = points;
         }
     }
 }
