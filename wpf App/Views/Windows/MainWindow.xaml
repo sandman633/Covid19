@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
+        xmlns:oxy="http://oxyplot.org/wpf"
         xmlns:vm="clr-namespace:Covid19.ViewModels"
         xmlns:cmd="clr-namespace:Covid19.Infrastructure.Commands"
         xmlns:local="clr-namespace:Covid19"
@@ -64,7 +65,18 @@
                         <fa5:ImageAwesome Icon="Solid_Cat" Height="20" Margin="3 2" />
                     </StackPanel>
                 </TabItem.Header>
-                <Grid></Grid>
+                <Grid>
+                    <oxy:Plot>
+                        <oxy:Plot.Axes>
+                            <oxy:LinearAxis Position="Left" />
+                            <oxy:LinearAxis Position="Bottom" />
+                        </oxy:Plot.Axes>
+                        <oxy:LineSeries Color="Red"
+                                        ItemsSource="{Binding TestDataPoints}"
+                                        DataFieldX="X"
+                                        DataFieldY="Y"/>
+                    </oxy:Plot>
+                </Grid>
             </TabItem>
         </TabControl>
     </DockPanel>
