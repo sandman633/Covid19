@@ -30,6 +30,16 @@
             <MenuItem Header="Помощь">
                 <MenuItem Header="О программе"></MenuItem>
             </MenuItem>
+            <MenuItem Command="{Binding ChangePageCommand}" CommandParameter="-1" >
+                <MenuItem.Header>
+                    <fa5:ImageAwesome Icon="Regular_ArrowAltCircleLeft" Height="15" />
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Command="{Binding ChangePageCommand}" CommandParameter="+1">
+                <MenuItem.Header>
+                    <fa5:ImageAwesome Icon="Regular_ArrowAltCircleRight" Height="15"/>
+                </MenuItem.Header>
+            </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem>
@@ -39,7 +49,7 @@
                 <ProgressBar Width="150" Height="14" Value="30"/>
             </StatusBarItem>
         </StatusBar>
-        <TabControl>
+        <TabControl SelectedIndex="{Binding SelectedPageIndex}" >
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -78,6 +88,46 @@
                     </oxy:Plot>
                 </Grid>
             </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Вкладка 3" />
+                        <fa5:ImageAwesome Icon="Solid_Cat" Height="20" Margin="3 2" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <oxy:Plot>
+                        <oxy:Plot.Axes>
+                            <oxy:LinearAxis Position="Left" />
+                            <oxy:LinearAxis Position="Bottom" />
+                        </oxy:Plot.Axes>
+                        <oxy:LineSeries Color="Red"
+                                        ItemsSource="{Binding TestDataPoints}"
+                                        DataFieldX="X"
+                                        DataFieldY="Y"/>
+                    </oxy:Plot>
+                </Grid>
+            </TabItem>
+            <TabItem TabIndex="{Binding TabsCount - 1}">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Вкладка 4" />
+                        <fa5:ImageAwesome Icon="Solid_Cat" Height="20" Margin="3 2" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <oxy:Plot>
+                        <oxy:Plot.Axes>
+                            <oxy:LinearAxis Position="Left" />
+                            <oxy:LinearAxis Position="Bottom" />
+                        </oxy:Plot.Axes>
+                        <oxy:LineSeries Color="Red"
+                                        ItemsSource="{Binding TestDataPoints}"
+                                        DataFieldX="X"
+                                        DataFieldY="Y"/>
+                    </oxy:Plot>
+                </Grid>
+            </TabItem >
         </TabControl>
     </DockPanel>
 </Window>

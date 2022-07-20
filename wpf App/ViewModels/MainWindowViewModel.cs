@@ -13,6 +13,8 @@ namespace Covid19.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
+        #region Properties
+
         #region Test DataPoints
         private IEnumerable<DataPoint> _testDataPoints;
         /// <summary>Test Data points</summary>
@@ -43,6 +45,28 @@ namespace Covid19.ViewModels
         }
         #endregion
 
+        #region Selected Page Index
+        private int _selectedPageIndex = 0;
+        /// <summary>Window Title</summary>
+        public int SelectedPageIndex
+        {
+            get => _selectedPageIndex;
+            set => Set(ref _selectedPageIndex, value);
+        }
+        #endregion
+
+        #region Tabs Count
+        private int _tabsCount;
+        /// <summary>Window Title</summary>
+        public int TabsCount
+        {
+            get => _tabsCount;
+            set => Set(ref _tabsCount, value);
+        }
+        #endregion
+
+        #endregion
+
         #region Commands
 
         #region CloseAppCommand
@@ -55,14 +79,28 @@ namespace Covid19.ViewModels
         }
         #endregion
 
+        #region ChangePageCommand
+        public ICommand ChangePageCommand { get; set; }
+        private bool CanChangePageCommandExecute(object p) => _selectedPageIndex>=0;
+
+        private void OnChangePageCommandExecuted(object p)
+        {
+            var index = Int32.Parse(p.ToString());
+            if(SelectedPageIndex>=0)
+                SelectedPageIndex += Int32.Parse(p.ToString());
+        }
+        #endregion
+
 
         #endregion
+
 
         public MainWindowViewModel()
         {
             #region Commands
 
             CloseAppCommand = new LambdaCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
+            ChangePageCommand = new LambdaCommand(OnChangePageCommandExecuted, CanChangePageCommandExecute);
 
             #endregion
 
